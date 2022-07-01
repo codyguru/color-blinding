@@ -1,0 +1,105 @@
+@import './base/settings';
+@import './base/base';
+@import './base/modal';
+
+@import './components/main-container';
+@import './components/gameover-modal';
+@import './components/circles';
+// @import './components/top5-modal';
+@import './components/htp-modal';
+
+.gameboard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 42rem;
+}
+
+@media (max-width: 480px) {
+
+    #root {
+        display: block;
+        margin: auto;
+        width: 30rem;
+        height: 80vh;
+        text-align: center;
+    }
+
+    .main-container {
+        padding: 1rem 1rem 1rem 0.7rem;
+        width: 30rem;
+        height: 80vh;
+
+        &__title {
+            margin: 1rem 0 .5rem 0;
+            font-size: 6.5rem;
+        }
+
+        &__time,
+        &__score {
+            font-size: 2.3rem;
+            margin: 1rem 0 0 0;
+            letter-spacing: 0.4px;
+        }
+
+        &__startbtn {
+            display: block;
+            margin-top: 2rem;
+            font-size: 3rem;
+            width: 13rem;
+            height: 5.5rem;
+            margin: auto;
+            margin-top: 2.5rem;
+        }
+
+        &__htp-btn {
+            margin-top: 10rem;
+            font-size: 2rem;
+            height: 6rem;
+            width: 10rem;
+        }
+    }
+
+    .modal__startbtn {
+        display: block;
+        margin: auto;
+        padding: 1rem 0;
+        height: 5rem;
+    }
+
+    .gameboard {
+        width: 30rem;
+        margin: 0;
+    }
+
+    .feedbackClass {
+        margin: 0 auto 1rem auto;
+        font-size: 2.5rem;
+    }
+
+    .circleSize-level1 {
+        width: 14.5rem;
+        height: 14.5rem;
+    }
+
+    .circleSize-level2 {
+        width: 9.5rem;
+        height: 9.5rem;
+    }
+
+    .circleSize-level3 {
+        width: 7.2rem;
+        height: 7.2rem;
+    }
+
+    .circleSize-level4 {
+        width: 5.8rem;
+        height: 5.8rem;
+    }
+
+    .circleSize-level5 {
+        width: 5rem;
+        height: 5rem;
+    }
+
+}

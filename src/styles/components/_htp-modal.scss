@@ -1,0 +1,33 @@
+.htp-modal {
+  padding: 2rem;
+  background: #001226;
+  font-size: 3.2rem;
+  max-width: 35rem;
+  height: 42rem;
+  outline: none;
+  border: 2px solid white;
+
+  &__header {
+      display: flex;
+  }
+
+  &__title {
+      font-size: 4rem;
+      font-family: 'Bubblepop';
+      margin: auto;
+      margin-bottom: 2rem;
+      text-align: center;
+      display: inline-block;
+      width: 25rem;
+  }
+
+  &__paragraph {
+      font-size: 2.2rem;
+      font-family: 'Helvetica';
+      margin-bottom: 2rem;
+  }
+
+  &__btn {
+      background-color: transparent;
+  }
+}

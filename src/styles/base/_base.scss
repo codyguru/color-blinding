@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Bubblepop';
+  src: url('../fonts/bubblepop.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'FredokaOne';
+  src: url('../fonts/FredokaOne-Regular.ttf') format('truetype'),
+}
+
+#app {
+  display: block;
+  margin: auto;
+  width: 800px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// rem (better support for accessibility)
+html {
+  //makes rem = 10px
+  font-size: 62.5%;
+}
+
+
+body {
+  font-family: FredokaOne, Arial, san-serif;
+  //now rem is 16px
+  font-size: $m-size;
+  background-color: #001f3f;
+  color: white;
+}
+
+button {
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
