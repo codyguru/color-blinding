@@ -31,7 +31,7 @@ const HowToPlayModal = ({ howToPlayModal, closeHowToPlayModal }) => (
     <p className="htp-modal__paragraph">The rules are simple:</p>
 
     <p className="htp-modal__paragraph">
-      Find the bubble with a slightly different color.
+      Find the circle with a slightly different color / shade.
     </p>
 
     <p className="htp-modal__paragraph">
