@@ -44,7 +44,7 @@ function App() {
   const [inProgress, setInProgress] = useState(false);
 
   // Timer
-  const [timer, setTimer] = useState(15);
+  const [timer, setTimer] = useState(20);
   const timerId = useRef(null);
   const didMount = useRef(false);
 
@@ -169,7 +169,7 @@ function App() {
   }
 
   function resetGame() {
-    setTimer(15);
+    setTimer(20);
     setScore(0);
     setSize(4);
     setClassLevel("circleBtn circleSize-level1");

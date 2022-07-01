@@ -23,9 +23,9 @@
   },
   "scripts": {
     "react-start": "react-scripts start",
-    "start": "nodemon ./server/server.js",
+    "start": "node ./server/server.js",
     "build": "react-scripts build",
-    "start-server": "npx nodemon ./backend/index.js"
+    "start-server": "nodemon ./backend/index.js"
   },
   "eslintConfig": {
     "extends": [
