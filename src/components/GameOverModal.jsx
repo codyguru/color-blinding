@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 
-const GameOverModal = ({ timer, score, startGame }) => (
+const GameOverModal = ({ timer, score, startGame, top5Players }) => (
   <Modal
     isOpen={timer === 0}
     contentLabel="Selected Option"
@@ -24,11 +24,11 @@ const GameOverModal = ({ timer, score, startGame }) => (
     </h1>
     <h4 className="gameover-modal__header">Top 5 Players</h4>
     <ol>
-      {/* {props.top5Players.map((player) => (
+      {top5Players.map((player) => (
         <li className="top5-modal__list" key={player._id}>
           {player.username} - {player.score}
         </li>
-      ))} */}
+      ))}
     </ol>
 
     <h4 className="gameover-modal__header">Your Score: {score}</h4>

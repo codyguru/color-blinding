@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 
-const Top5Modal = ({ closeTop5Modal, score, top5Players, timer }) => {
+const Top5Modal = ({
+  closeTop5Modal,
+  score,
+  top5Players,
+  timer,
+  startGame,
+}) => {
   //Top 5 Modal Methods ================================================
   const [username, setUsername] = useState("");
 
@@ -23,6 +29,7 @@ const Top5Modal = ({ closeTop5Modal, score, top5Players, timer }) => {
     axios
       .post("/users/add", user)
       .then((res) => console.log("axios post", res.data));
+    startGame();
   }
 
   return (

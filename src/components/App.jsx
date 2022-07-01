@@ -15,22 +15,22 @@ import {
 
 function App() {
   const colorSet = [
-    // yellow
+    //lighter yellow - yellow -- difficult
     ["#e8d505", "#d9c704"],
-    // green
-    ["#33a151", "#2e8f48"],
-    // blue
-    ["#2e368f", "#282f7d"],
-    // red
-    ["#873333", "#7a2f2f"],
-    // light red - red
-    ["#9e3c3c", "#873333"],
-    // light blue - blue
-    ["#333b9e", "#2b338c"],
-    // light green - green
-    ["#32994e", "#2e8f48"],
-    // light pink - pink
-    ["#d68bd1", "#bd7bb8"],
+    //dark green - light green- medium / hard - MIGHT CHANGE
+    ["#309c4d", "#37b057"],
+    //light green (50, 153, 78) - green -- medium
+    ["#349e51", "#2e8f48"],
+    //lightblue - darkblue -- medium ------ good
+    ["#2d3691", "#2a3287"],
+    //dark blue - light blue -- medium /hard-------good
+    ["#333b9e", "#3740ad"],
+    //light red - dark red - easy / med  ---------easy
+    ["#8c3232", "#802f2f"],
+    //dark red - light red -- diff but good kinda hard
+    ["#963939", "#a84040"],
+    //light pink - pink --easy / med
+    ["#db8fd6", "#c983c5"],
   ];
 
   // Game
@@ -61,6 +61,7 @@ function App() {
       if (timer < 0.5) {
         clearInterval(timerId.current);
         setInProgress(false);
+        updateTop5List();
         //setInitialStart(false);
       }
     }
@@ -68,7 +69,7 @@ function App() {
 
   function startGame() {
     loadColor();
-
+    setTop5Modal(true);
     setInProgress(true);
 
     if (initialStart === true) {
@@ -194,13 +195,11 @@ function App() {
   function updateTop5List() {
     axios.get("/users").then((response) => {
       //else auto top 5
-      console.log(response, "response here");
       if (response.data.length > 0) {
         // mongo query the data to sort LIMIT 5 DESC
         // const sortedPlayers = response.data.sort(this.compare);
         // setTop5Players(sortedPlayers.slice(0, 5));
-        console.log(response, "here are the top 5 players");
-        setTop5Players(response);
+        setTop5Players(response.data);
       }
     });
   }
@@ -209,9 +208,15 @@ function App() {
     updateTop5List();
   }, []);
 
-  // useEffect(() => {
-  //   setFifthScore(top5Players[4].score);
-  // }, [top5Players]);
+  const status = useRef();
+
+  useEffect(() => {
+    if (!status.current) {
+      status.current = true;
+    } else {
+      setFifthScore(top5Players[4].score);
+    }
+  }, [top5Players]);
 
   function closeTop5Modal() {
     setTop5Modal(false);
@@ -289,18 +294,15 @@ function App() {
             inProgress={inProgress}
             classLevel={classLevel}
           />
-          {score &&
-            fifthScore &&
-            top5Modal(
-              <GameOverModal
-                timer={timer}
-                startGame={startGame}
-                score={score}
-                //top5Players={this.state.top5Players}
-                updateTop5List={updateTop5List}
-                // call this during mount
-              />
-            )}
+          {score <= fifthScore && top5Modal && (
+            <GameOverModal
+              timer={timer}
+              startGame={startGame}
+              score={score}
+              top5Players={top5Players}
+              // call this during mount
+            />
+          )}
 
           {score > fifthScore && top5Modal && !inProgress && (
             <Top5Modal
@@ -308,6 +310,8 @@ function App() {
               score={score}
               closeTop5Modal={closeTop5Modal}
               timer={timer}
+              updateTop5List={updateTop5List}
+              startGame={startGame}
             />
           )}
         </div>

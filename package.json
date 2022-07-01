@@ -23,7 +23,7 @@
   },
   "scripts": {
     "react-start": "react-scripts start",
-    "start": "./backend/index.js",
+    "start": "nodemon ./server/server.js",
     "build": "react-scripts build",
     "start-server": "npx nodemon ./backend/index.js"
   },
@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "sass": "^1.53.0"
   }
 }

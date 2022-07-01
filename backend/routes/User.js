@@ -1,25 +1,25 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const User = require('../models/User');
-const route = require('../models/User');
+const express = require("express");
+const User = require("../models/User");
 const router = express.Router();
 
-
-router.route('/').get((req, res) => {
-    User.find()
-        .then(users => res.json(users))
-        .catch(err => res.status(400).json('Error ' + err));
+router.route("/").get((req, res) => {
+  User.find({})
+    .sort({ score: -1 })
+    .limit(5)
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json("Error " + err));
 });
 
-router.route('/add').post((req, res) => {
-    const username = req.body.username;
-    const score = req.body.score;
+router.route("/add").post((req, res) => {
+  const username = req.body.username;
+  const score = req.body.score;
 
-    const newUser = new User({ username, score });
+  const newUser = new User({ username, score });
 
-    newUser.save()
-        .then(() => res.json('User added!'))
-        .catch(err => res.status(400).json('Error ' + err));
+  newUser
+    .save()
+    .then(() => res.json("User added!"))
+    .catch((err) => res.status(400).json("Error " + err));
 });
 
 // router.post('/', async (req, res) => {
