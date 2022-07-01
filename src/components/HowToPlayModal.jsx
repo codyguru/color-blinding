@@ -35,11 +35,11 @@ const HowToPlayModal = ({ howToPlayModal, closeHowToPlayModal }) => (
     </p>
 
     <p className="htp-modal__paragraph">
-      If picked correctly, +.5 seconds will be added to your total time.
+      If picked correctly, +1/2 a second will be added to your total time.
     </p>
 
     <p className="htp-modal__paragraph">
-      Picked incorrectly, -.5 seconds will be deducted from your total time.
+      Picked incorrectly, -1/2 a second will be deducted from your total time.
     </p>
   </Modal>
 );
