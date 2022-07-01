@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
+    "nodemon": "^2.0.18",
     "sass": "^1.53.0"
   }
 }
