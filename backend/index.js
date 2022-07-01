@@ -1,26 +1,27 @@
 const express = require("express");
 require("dotenv").config();
 const path = require("path");
-const connectDB = require("../backend/connnection");
-const User = require("../models/User");
+const connectDB = require("./database/connection");
+const User = require("./database/models/User");
 
 const app = express();
-const cors = require("cors");
+//const cors = require("cors");
 
 const publicPath = path.join(__dirname, "..", "/public");
 console.log(__dirname);
 
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 app.use(express.static(publicPath));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(publicPath, "index.html"));
+// });
 
-app.get("/", (req, res) => {
+app.get("/users", (req, res) => {
+  console.log("in users controller");
   User.find({})
-    .sort({ score: "desc" })
+    .sort({ score: -1 })
     .limit(5)
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json("Error " + err));

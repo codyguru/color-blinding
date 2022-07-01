@@ -194,6 +194,7 @@ function App() {
   function updateTop5List() {
     axios.get("/users").then((response) => {
       //else auto top 5
+      console.log(response, "response here");
       if (response.data.length > 0) {
         // mongo query the data to sort LIMIT 5 DESC
         // const sortedPlayers = response.data.sort(this.compare);
@@ -203,6 +204,10 @@ function App() {
       }
     });
   }
+
+  useEffect(() => {
+    updateTop5List();
+  }, []);
 
   // useEffect(() => {
   //   setFifthScore(top5Players[4].score);
