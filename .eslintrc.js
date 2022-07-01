@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["plugin:react/recommended"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -15,5 +15,3 @@ module.exports = {
   plugins: ["react"],
   rules: {},
 };
-
-//"eslint:recommended",
