@@ -22,7 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "react-start": "react-scripts start",
+    "start": "./backend/index.js",
     "build": "react-scripts build",
     "start-server": "npx nodemon ./backend/index.js"
   },
