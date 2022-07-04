@@ -3,8 +3,6 @@
 > Color-blind is a game built on the MERN stack. 
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 First off, I just wanted to say the joy creating this application brought me. I wanted to create something that everyday people could interact with and enjoy, coders and non-coders alike. Although simple, mini games are addictive and bring tons of joy to whoever plays them. I was inspired by mini games like Flappy Bird and Wordle.
 I wanted to make a game that was simple yet addictive and share it with my family and friends.
