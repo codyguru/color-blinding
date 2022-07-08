@@ -7,6 +7,8 @@ import Top5Modal from "./Top5Modal";
 import shuffleColorArray from "../utils/gameUtils.js";
 import { Animated } from "react-animated-css";
 import axios from "axios";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+
 import {
   correctPlaySound,
   incorrectPlaySound,
@@ -282,8 +284,8 @@ function App() {
 
       <p className={matchFeedback}>
         {matchFeedback === "incorrect feedbackClass"
-          ? "TRY AGAIN! -0.5 SEC"
-          : "ADD TIME +0.5 SEC!"}
+          ? "TRY AGAIN! -1/2 SEC"
+          : "ADD TIME +1/2 SEC!"}
       </p>
       {!!colors.length && (
         <div>
@@ -315,6 +317,20 @@ function App() {
             />
           )}
         </div>
+      )}
+      {initialStart && (
+        <footer className="footer">
+          <a href="https://www.linkedin.com/in/bribui">
+            <button className="footer-button">
+              <BsLinkedin />
+            </button>
+          </a>
+          <a href="https://github.com/brianbui012">
+            <button className="footer-button">
+              <BsGithub />
+            </button>
+          </a>
+        </footer>
       )}
     </div>
   );

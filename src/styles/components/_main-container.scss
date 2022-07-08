@@ -6,6 +6,8 @@
   margin: auto;
   padding: 0 2rem;
   padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
 
   &__title {
     font-family: "Bubblepop";
