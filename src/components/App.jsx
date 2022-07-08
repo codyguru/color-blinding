@@ -316,6 +316,12 @@ function App() {
           )}
         </div>
       )}
+      {initialStart && (
+        <footer className="footer">
+          <button className="footer-button">linkedin</button>
+          <button className="footer-button">github</button>
+        </footer>
+      )}
     </div>
   );
 }
