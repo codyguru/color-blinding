@@ -7,7 +7,6 @@ I wanted to make a game that was simple yet addictive and share it with my famil
 
 ![Animation](https://user-images.githubusercontent.com/39501050/177068462-86ef4919-7918-445b-9308-62470dba53bc.gif)
 
-DEMO: https://buicolorblind.herokuapp.com/
 
 ![](header.png)
 
